@@ -98,19 +98,19 @@ html {
 }
 
 .dashboard-item .resume-icon {
-  width: 100px; /* Default size for other icons */
+  width: 100px;
   height: 100px;
   margin-bottom: -10px;
 }
 
 .dashboard-item .block-icon {
-  width: 70px; /* Default size for other icons */
+  width: 70px;
   height: 70px;
   margin-top: 10px;
 }
 
 .dashboard-item .person-icon {
-  width: 70px; /* Default size for other icons */
+  width: 70px;
   height: 70px;
   margin-top: 10px;
 }
@@ -124,14 +124,14 @@ html {
 /* Clicking Links / Buttons */
 
 a {
-  text-decoration: none; /* Removes the underline */
-  color: inherit; /* Makes the link text inherit the color from its parent or use default color */
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
   background: none;
   border: none;
-  color: inherit; /* Makes the button text inherit the color from its parent */
+  color: inherit;
   cursor: pointer; /* Changes the cursor to pointer on hover */
   font-family: "Press Start 2P", monospace;
   font-size: 10px;
@@ -254,7 +254,7 @@ button {
   background: #fff;
   z-index: 5;
   pointer-events: none;
-  mix-blend-mode: difference; /* Optional: adds intensity */
+  mix-blend-mode: difference;
   opacity: 0;
 }
 
@@ -317,8 +317,7 @@ button {
   z-index: 0;
   width: 100%;
   height: 100%;
-
-  opacity: 1; /* Adjust this to make it more or less visible */
+  opacity: 1;
   pointer-events: none;
 }
 
