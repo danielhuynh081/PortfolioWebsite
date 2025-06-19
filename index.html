@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Huynh - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+  </head>
+  <body>
+    <div id="tv-frame">
+      <!-- VIDEO STATIC BACKGROUND -->
+      <video autoplay muted loop id="static-bg" class="hidden">
+        <source
+          src="vhs-glitch-noise-loop-animation-free-video.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- TV BORDER ON TOP OF VIDEO -->
+      <img src="tv_border.png" alt="tv border" class="tv-border" />
+
+      <!-- START SCREEN -->
+      <div class="start-screen" id="startScreen">
+        <button class="press-start" id="startButton">PRESS START</button>
+        <p class="credit">&copy; 2025 Daniel Huynh</p>
+      </div>
+
+      <!-- DASHBOARD ON TOP OF VIDEO -->
+      <div class="dashboard hidden" id="dashboard">
+        <div class="dashboard-box">
+          <h1 class="logo">DANIEL</h1>
+          <div class="dashboard-grid">
+            <div class="dashboard-item">
+              <img
+                class="home-options-icon"
+                src="projects.gif"
+                alt="Projects"
+              />
+              <p>Projects</p>
+            </div>
+            <div class="dashboard-item">
+              <img class="resume-icon" src="resume.gif" alt="'Resume" />
+              <p>Resume</p>
+            </div>
+            <div class="dashboard-item">
+              <img class="linkedin-icon" src="linkedin.gif" alt="Linkedin" />
+              <p>LinkedIn</p>
+            </div>
+            <div class="dashboard-item">
+              <img class="github-icon" src="github.gif" alt="Github" />
+              <p>Github</p>
+            </div>
+            <div class="dashboard-item">
+              <img class="block-icon" src="aboutme.gif" alt="About Me" />
+              <p>About Me</p>
+            </div>
+            <div class="dashboard-item">
+              <img
+                class="person-icon"
+                src="contactme.gif"
+                alt="Dashbaord button Profile spinning icon"
+              />
+              <p>Contact</p>
+            </div>
+          </div>
+          <p class="footer">
+            &copy; 2025 DANIEL HUYNH | Portland State University | Class of 2025
+          </p>
+        </div>
+      </div>
+
+      <!-- FLICKER -->
+      <div class="flicker-overlay hidden" id="flicker"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
