@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daniel Huynh - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
@@ -17,14 +17,14 @@
       <!-- VIDEO STATIC BACKGROUND -->
       <video autoplay muted loop id="static-bg" class="hidden">
         <source
-          src="vhs-glitch-noise-loop-animation-free-video.mp4"
+          src="./media/vhs-glitch-noise-loop-animation-free-video.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
       </video>
 
       <!-- TV BORDER ON TOP OF VIDEO -->
-      <img src="tv_border.png" alt="tv border" class="tv-border" />
+      <img src="./media/tv_border.png" alt="tv border" class="tv-border" />
 
       <!-- START SCREEN -->
       <div class="start-screen" id="startScreen">
@@ -35,36 +35,63 @@
       <!-- DASHBOARD ON TOP OF VIDEO -->
       <div class="dashboard hidden" id="dashboard">
         <div class="dashboard-box">
-          <h1 class="logo">DANIEL</h1>
+          <h1 class="name">DANIEL</h1>
           <div class="dashboard-grid">
             <div class="dashboard-item">
+              <button class="dashboard-btn">
+                <img
+                  class="home-options-icon"
+                  src="./media/projects.gif"
+                  alt="Projects"
+                />
+                <p>Projects</p>
+              </button>
+            </div>
+            <div class="dashboard-item">
+              <button class="dashboard-btn" id="resumeButton">
+                <img
+                  class="resume-icon"
+                  src="./media/resume.gif"
+                  alt="'Resume"
+                />
+                <p>Resume</p>
+              </button>
+            </div>
+            <div class="dashboard-item">
+              <a
+                href="https://www.linkedin.com/in/danielhuynh6/"
+                class="linkedin-btn"
+              >
+                <img
+                  class="linkedin-icon"
+                  src="./media/linkedin.gif"
+                  alt="LinkedIn"
+                />
+                <p>LinkedIn</p>
+              </a>
+            </div>
+            <div class="dashboard-item">
+              <a href="https://github.com/danielhuynh081" class="github-btn">
+                <img
+                  class="github-icon"
+                  src="./media/github.gif"
+                  alt="Github"
+                />
+                <p>Github</p>
+              </a>
+            </div>
+            <div class="dashboard-item">
               <img
-                class="home-options-icon"
-                src="projects.gif"
-                alt="Projects"
+                class="block-icon"
+                src="./media/aboutme.gif"
+                alt="About Me"
               />
-              <p>Projects</p>
-            </div>
-            <div class="dashboard-item">
-              <img class="resume-icon" src="resume.gif" alt="'Resume" />
-              <p>Resume</p>
-            </div>
-            <div class="dashboard-item">
-              <img class="linkedin-icon" src="linkedin.gif" alt="Linkedin" />
-              <p>LinkedIn</p>
-            </div>
-            <div class="dashboard-item">
-              <img class="github-icon" src="github.gif" alt="Github" />
-              <p>Github</p>
-            </div>
-            <div class="dashboard-item">
-              <img class="block-icon" src="aboutme.gif" alt="About Me" />
               <p>About Me</p>
             </div>
             <div class="dashboard-item">
               <img
                 class="person-icon"
-                src="contactme.gif"
+                src="./media/contactme.gif"
                 alt="Dashbaord button Profile spinning icon"
               />
               <p>Contact</p>
@@ -76,10 +103,30 @@
         </div>
       </div>
 
+      <!-- PROJECTS PAGE -->
+      <!-- RESUME PAGE -->
+      <div class="resume-page hidden" id="resumePage">
+        <div class="resume-box">
+          <h1 class="logo">Resume</h1>
+          <div class="resume-content">
+            <img src="./media/resume.png" alt="Resume Icon" />
+            <p>
+              <a
+                href="./media/resume.png"
+                download="resume.png"
+                class="download-resume"
+              >
+                Download my resume as a PDF
+              </a>
+            </p>
+          </div>
+          <button class="back-btn" id="backButton">Back</button>
+        </div>
+      </div>
       <!-- FLICKER -->
       <div class="flicker-overlay hidden" id="flicker"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
