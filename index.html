@@ -14,6 +14,9 @@
   </head>
   <body>
     <div id="tv-frame">
+      <!-- TV BORDER -->
+      <img src="./media/tv_border.png" alt="tv border" class="tv-border" />
+
       <!-- VIDEO STATIC BACKGROUND -->
       <video autoplay muted loop id="static-bg" class="hidden">
         <source
@@ -23,24 +26,21 @@
         Your browser does not support the video tag.
       </video>
 
-      <!-- TV BORDER ON TOP OF VIDEO -->
-      <img src="./media/tv_border.png" alt="tv border" class="tv-border" />
-
       <!-- START SCREEN -->
       <div class="start-screen" id="startScreen">
         <button class="press-start" id="startButton">PRESS START</button>
         <p class="credit">&copy; 2025 Daniel Huynh</p>
       </div>
 
-      <!-- DASHBOARD ON TOP OF VIDEO -->
+      <!-- MAIN DASHBOARD -->
       <div class="dashboard hidden" id="dashboard">
         <div class="dashboard-box">
           <h1 class="name">DANIEL</h1>
           <div class="dashboard-grid">
             <div class="dashboard-item">
-              <button class="dashboard-btn">
+              <button class="dashboard-btn" id="projectsButton">
                 <img
-                  class="home-options-icon"
+                  class="projects-icon"
                   src="./media/projects.gif"
                   alt="Projects"
                 />
@@ -81,20 +81,24 @@
               </a>
             </div>
             <div class="dashboard-item">
-              <img
-                class="block-icon"
-                src="./media/aboutme.gif"
-                alt="About Me"
-              />
-              <p>About Me</p>
+              <button class="dashboard-btn" id="aboutButton">
+                <img
+                  class="about-icon"
+                  src="./media/aboutme.gif"
+                  alt="About Me"
+                />
+                <p>About Me</p>
+              </button>
             </div>
             <div class="dashboard-item">
-              <img
-                class="person-icon"
-                src="./media/contactme.gif"
-                alt="Dashbaord button Profile spinning icon"
-              />
-              <p>Contact</p>
+              <button class="dashboard-btn" id="contactButton">
+                <img
+                  class="contact-icon"
+                  src="./media/contactme.gif"
+                  alt="Contact Me"
+                />
+                <p>Contact</p>
+              </button>
             </div>
           </div>
           <p class="footer">
@@ -104,6 +108,13 @@
       </div>
 
       <!-- PROJECTS PAGE -->
+      <div class="project-page hidden" id="projectPage">
+        <div class="project-box">
+          <h1 class="logo">Projects</h1>
+          <button class="back-btn" id="backButton">Back</button>
+        </div>
+      </div>
+
       <!-- RESUME PAGE -->
       <div class="resume-page hidden" id="resumePage">
         <div class="resume-box">
@@ -123,10 +134,27 @@
           <button class="back-btn" id="backButton">Back</button>
         </div>
       </div>
+
+      <!-- ABOUT ME PAGE -->
+      <div class="about-page hidden" id="aboutPage">
+        <div class="about-box">
+          <h1 class="logo">About Me</h1>
+          <button class="back-btn" id="backButton">Back</button>
+        </div>
+      </div>
+
+      <!-- CONTACT PAGE -->
+      <div class="contact-page hidden" id="contactPage">
+        <div class="contact-box">
+          <h1 class="logo">Contact</h1>
+          <button class="back-btn" id="backButton">Back</button>
+        </div>
+      </div>
       <!-- FLICKER -->
       <div class="flicker-overlay hidden" id="flicker"></div>
     </div>
 
     <script src="./scripts/script.js"></script>
+    <div class="tv-overlay"></div>
   </body>
 </html>
