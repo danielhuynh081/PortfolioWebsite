@@ -9,7 +9,7 @@ html {
   background: black;
   font-family: "Press Start 2P", monospace;
   color: black;
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 /* TV STYLING */
