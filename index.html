@@ -166,14 +166,35 @@
           <button class="back-btn" id="backButton">Back</button>
         </div>
       </div>
-
       <!-- CONTACT PAGE -->
       <div class="contact-page hidden" id="contactPage">
         <div class="page-box">
-          <h1 class="logo">Contact</h1>
-          <button class="back-btn" id="backButton">Back</button>
+          <!-- Navbar / Header with stripes -->
+          <div class="contact-navbar">
+            <div class="contact-navbar-decoration"></div>
+            <h1 class="contact-navbar-text">CONTACT</h1>
+            <div class="contact-navbar-decoration"></div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="subject">SUBJECT</label>
+            <input type="text" id="subject" name="subject" required />
+
+            <label for="message">MESSAGE</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="submit-btn">SEND</button>
+          </form>
+
+          <!-- Back Button -->
+          <button class="back-btn">Back</button>
         </div>
       </div>
+
       <!-- FLICKER -->
       <div class="flicker-overlay hidden" id="flicker"></div>
     </div>
