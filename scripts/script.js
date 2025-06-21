@@ -22,15 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Start Button */
   if (startButton) {
     startButton.addEventListener("click", () => {
-      // Start flickering effect
       flicker.classList.remove("hidden");
       flicker.classList.add("flicker-animation");
-
-      // Show tv background
       staticBg.classList.remove("hidden");
 
       setTimeout(() => {
-        // Hide flicker and start screen, then show dashboard
         flicker.classList.add("hidden");
         flicker.classList.remove("flicker-animation");
         startScreen.classList.add("hidden");
@@ -42,12 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Resume Page  */
   if (resumeButton) {
     resumeButton.addEventListener("click", () => {
-      // Start flickering effect
       flicker.classList.remove("hidden");
       flicker.classList.add("flicker-animation");
 
       setTimeout(() => {
-        // Hide flicker and start screen, then show dashboard
         flicker.classList.add("hidden");
         flicker.classList.remove("flicker-animation");
         dashboard.classList.add("hidden");
@@ -59,12 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Projects Page */
   if (projectButton) {
     projectButton.addEventListener("click", () => {
-      // Start flickering effect
       flicker.classList.remove("hidden");
       flicker.classList.add("flicker-animation");
 
       setTimeout(() => {
-        // Hide flicker and start screen, then show dashboard
         flicker.classList.add("hidden");
         flicker.classList.remove("flicker-animation");
         dashboard.classList.add("hidden");
@@ -76,12 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* About me Page */
   if (aboutButton) {
     aboutButton.addEventListener("click", () => {
-      // Start flickering effect
       flicker.classList.remove("hidden");
       flicker.classList.add("flicker-animation");
 
       setTimeout(() => {
-        // Hide flicker and start screen, then show about screen
         flicker.classList.add("hidden");
         flicker.classList.remove("flicker-animation");
         dashboard.classList.add("hidden");
@@ -93,12 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Contact Page */
   if (contactButton) {
     contactButton.addEventListener("click", () => {
-      // Start flickering effect
       flicker.classList.remove("hidden");
       flicker.classList.add("flicker-animation");
 
       setTimeout(() => {
-        // Hide flicker and start screen, then show contact screen
         flicker.classList.add("hidden");
         flicker.classList.remove("flicker-animation");
         dashboard.classList.add("hidden");
@@ -129,4 +117,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000);
     });
   });
+
+  /* EmailJS Contact Form Handler */
+  emailjs.init("seup3yiZP0aF2d243"); // Public key
+
+  const contactForm = document.querySelector(".contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs
+        .sendForm("service_hznato9", "template_own208u", this)
+        .then(() => {
+          this.reset();
+        })
+        .catch((err) => {
+          alert("Failed to send: " + JSON.stringify(err));
+        });
+    });
+  }
 });
