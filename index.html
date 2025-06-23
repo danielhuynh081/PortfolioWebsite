@@ -109,9 +109,46 @@
 
       <!-- PROJECTS PAGE -->
       <div class="project-page hidden" id="projectPage">
-        <div class="page-box">
-          <h1 class="logo">Projects</h1>
-          <button class="back-btn" id="backButton">Back</button>
+        <div class="project-box">
+          <p>Projects</p>
+          <div class="projects-content">
+            <p style="font-size: 8px">
+              Here are some of my projects. Click on the images to view them on
+              GitHub.
+            </p>
+
+            <!-- Slider -->
+            <div class="slider">
+              <a
+                id="project-link"
+                href="https://github.com/your-username/project1"
+                target="_blank"
+              >
+                <img
+                  id="project-image"
+                  src="./media/vietnamese.png"
+                  class="slider-image"
+                  style="width: 200px; height: 155px"
+                />
+              </a>
+              <p id="project-bio" class="project-bio">
+                Vietnamese Translator — uses Whisper + GPT for real-time
+                transcription and translation.
+              </p>
+
+              <div class="slider-buttons">
+                <button id="prevProject">←</button>
+                <button id="nextProject">→</button>
+              </div>
+            </div>
+            <button
+              class="back-btn"
+              id="backButton"
+              style="font-size: 10px; margin-bottom: 10px"
+            >
+              Back
+            </button>
+          </div>
         </div>
       </div>
 
@@ -124,7 +161,7 @@
             <p>
               <a
                 href="./media/resume.png"
-                download="resume.png"
+                download="Resume-Daniel-Huynh.png"
                 class="download-resume"
               >
                 Download my resume as a PDF
