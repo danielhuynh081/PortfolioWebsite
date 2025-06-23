@@ -20,6 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactScreen = document.getElementById("contactPage");
   const sentScreen = document.getElementById("sentMessage");
 
+  /* Project Slider */
+
+  let currentProject = 0;
+  const projectImage = document.getElementById("project-image");
+  const projectBio = document.getElementById("project-bio");
+  const projectLink = document.getElementById("project-link");
+
+  const prevBtn = document.getElementById("prevProject");
+  const nextBtn = document.getElementById("nextProject");
+
   /* Start Button */
   if (startButton) {
     startButton.addEventListener("click", () => {
@@ -152,56 +162,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
   }
+
+  /* Project Slider Logic */
+  const projects = [
+    {
+      img: "./media/vietnamese.png",
+      bio: "Live Vietnamese Translator – transcribes speech with OpenAI Whisper and creates flashcards via Genanki to support Vietnamese language learning.",
+      link: "",
+    },
+    {
+      img: "./media/aispeech.png",
+      bio: "AI Speech Improver – uses Streamlit, Python, and OpenAI Whisper to transcribe speech and provide post-analysis feedback on enunciation, pacing, and clarity for public speaking improvement.",
+      link: "",
+    },
+    {
+      img: "./media/macsystem.png",
+      bio: "Maseeh Access Control System – built with React, Django, and PostgreSQL to streamline and manage student classroom access requests at PSU.",
+      link: "",
+    },
+  ];
+
+  function showProject(index) {
+    const { img, bio, link } = projects[index];
+    projectImage.src = img;
+    projectBio.textContent = bio;
+    projectLink.href = link;
+  }
+
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+      currentProject = (currentProject - 1 + projects.length) % projects.length;
+      showProject(currentProject);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentProject = (currentProject + 1) % projects.length;
+      showProject(currentProject);
+    });
+  }
+
+  // Initialize the first project on page load
+  if (projectImage && projectBio && projectLink) {
+    showProject(currentProject);
+  }
 });
-
-/* Project Slider Logic */
-const projects = [
-  {
-    img: "./media/vietnamese.png",
-    bio: "Vietnamese Translator — uses Whisper + GPT for real-time transcription and translation.",
-    link: "https://github.com/your-username/project1",
-  },
-  {
-    img: "./media/resume.png",
-    bio: "Workout Tracker — built with Flask and Chart.js for visualizing gym progress.",
-    link: "https://github.com/your-username/project2",
-  },
-  {
-    img: "./media/resume.png",
-    bio: "AI Recipe Bot — suggests meals using user input, OpenAI API, and edible APIs.",
-    link: "https://github.com/your-username/project3",
-  },
-];
-
-let currentProject = 0;
-
-const projectImage = document.getElementById("project-image");
-const projectBio = document.getElementById("project-bio");
-const projectLink = document.getElementById("project-link");
-
-const prevBtn = document.getElementById("prevProject");
-const nextBtn = document.getElementById("nextProject");
-
-function showProject(index) {
-  const { img, bio, link } = projects[index];
-  projectImage.src = img;
-  projectBio.textContent = bio;
-  projectLink.href = link;
-}
-
-if (prevBtn && nextBtn) {
-  prevBtn.addEventListener("click", () => {
-    currentProject = (currentProject - 1 + projects.length) % projects.length;
-    showProject(currentProject);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    currentProject = (currentProject + 1) % projects.length;
-    showProject(currentProject);
-  });
-}
-
-// Initialize the first project on page load
-if (projectImage && projectBio && projectLink) {
-  showProject(currentProject);
-}
