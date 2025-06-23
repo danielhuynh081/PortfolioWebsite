@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectScreen = document.getElementById("projectPage");
   const aboutScreen = document.getElementById("aboutPage");
   const contactScreen = document.getElementById("contactPage");
+  const sentScreen = document.getElementById("sentMessage");
 
   /* Start Button */
   if (startButton) {
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Hide all pages
         document
           .querySelectorAll(
-            ".project-page, .resume-page, .about-page, .contact-page"
+            ".project-page, .resume-page, .about-page, .contact-page, .sent-msg"
           )
           .forEach((page) => page.classList.add("hidden"));
 
@@ -122,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   emailjs.init("seup3yiZP0aF2d243"); // Public key
 
   const contactForm = document.querySelector(".contact-form");
+
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -129,7 +131,21 @@ document.addEventListener("DOMContentLoaded", () => {
       emailjs
         .sendForm("service_hznato9", "template_own208u", this)
         .then(() => {
+          // Hide contact page
+          document.getElementById("contactPage").classList.add("hidden");
+
+          // Show sent message popup (now outside contactPage)
+          const sentScreen = document.getElementById("sentMessage");
+          sentScreen.classList.remove("hidden");
+
+          // Reset form
           this.reset();
+
+          // After 3 seconds, hide popup and show dashboard
+          setTimeout(() => {
+            sentScreen.classList.add("hidden");
+            document.getElementById("dashboard").classList.remove("hidden");
+          }, 1500);
         })
         .catch((err) => {
           alert("Failed to send: " + JSON.stringify(err));
