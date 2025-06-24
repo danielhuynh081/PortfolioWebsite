@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         flicker.classList.remove("flicker-animation");
         startScreen.classList.add("hidden");
         dashboard.classList.remove("hidden");
-      }, 1000);
+      }, 850);
     });
   }
 
@@ -50,14 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (resumeButton) {
     resumeButton.addEventListener("click", () => {
       flicker.classList.remove("hidden");
-      flicker.classList.add("flicker-animation");
+      flicker.classList.add("channel-switch");
 
       setTimeout(() => {
         flicker.classList.add("hidden");
-        flicker.classList.remove("flicker-animation");
         dashboard.classList.add("hidden");
         resumeScreen.classList.remove("hidden");
-      }, 1000);
+        flicker.classList.remove("channel-switch");
+      }, 350);
     });
   }
 
@@ -65,14 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (projectButton) {
     projectButton.addEventListener("click", () => {
       flicker.classList.remove("hidden");
-      flicker.classList.add("flicker-animation");
+      flicker.classList.add("channel-switch");
 
       setTimeout(() => {
         flicker.classList.add("hidden");
-        flicker.classList.remove("flicker-animation");
+        flicker.classList.remove("channel-switch");
         dashboard.classList.add("hidden");
         projectScreen.classList.remove("hidden");
-      }, 1000);
+      }, 350);
     });
   }
 
@@ -80,14 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (aboutButton) {
     aboutButton.addEventListener("click", () => {
       flicker.classList.remove("hidden");
-      flicker.classList.add("flicker-animation");
+      flicker.classList.add("channel-switch");
 
       setTimeout(() => {
         flicker.classList.add("hidden");
-        flicker.classList.remove("flicker-animation");
+        flicker.classList.remove("channel-switch");
         dashboard.classList.add("hidden");
         aboutScreen.classList.remove("hidden");
-      }, 1000);
+      }, 350);
     });
   }
 
@@ -95,14 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactButton) {
     contactButton.addEventListener("click", () => {
       flicker.classList.remove("hidden");
-      flicker.classList.add("flicker-animation");
+      flicker.classList.add("channel-switch");
 
       setTimeout(() => {
         flicker.classList.add("hidden");
-        flicker.classList.remove("flicker-animation");
+        flicker.classList.remove("channel-switch");
         dashboard.classList.add("hidden");
         contactScreen.classList.remove("hidden");
-      }, 1000);
+      }, 350);
     });
   }
 
@@ -110,11 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
   backButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       flicker.classList.remove("hidden");
-      flicker.classList.add("flicker-animation");
+      flicker.classList.add("channel-switch");
 
       setTimeout(() => {
         flicker.classList.add("hidden");
-        flicker.classList.remove("flicker-animation");
+        flicker.classList.remove("channel-switch");
 
         // Hide all pages
         document
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Show dashboard
         dashboard.classList.remove("hidden");
-      }, 1000);
+      }, 350);
     });
   });
 

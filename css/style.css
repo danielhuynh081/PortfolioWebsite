@@ -419,9 +419,6 @@ button {
   background-color: #fff;
   cursor: pointer;
 }
-* {
-  cursor: url("./media/your-cursor-name.png"), auto;
-}
 
 .submit-btn:hover {
   background-color: #565555;
@@ -439,12 +436,13 @@ button {
   background: #fff;
   z-index: 5;
   pointer-events: none;
-  mix-blend-mode: difference;
+
   opacity: 0;
 }
 
 .flicker-animation {
   animation: flicker 1.5s ease-in-out forwards;
+  mix-blend-mode: difference;
 }
 
 @keyframes flicker {
@@ -542,4 +540,33 @@ button {
 
 .tv-border {
   z-index: 10000;
+}
+
+/* Static page switching */
+.channel-switch {
+  animation: channelSwitch 0.6s ease-in-out forwards;
+  background: url("../media/static-tv-static.gif") center center / cover
+    no-repeat;
+}
+@keyframes channelSwitch {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  25% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.98);
+  }
+  75% {
+    opacity: 0.6;
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
 }
