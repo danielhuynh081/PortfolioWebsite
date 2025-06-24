@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(() => {
             sentScreen.classList.add("hidden");
             document.getElementById("dashboard").classList.remove("hidden");
-          }, 1500);
+          }, 1000);
         })
         .catch((err) => {
           alert("Failed to send: " + JSON.stringify(err));
