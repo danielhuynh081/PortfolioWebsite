@@ -99,7 +99,6 @@ html {
 }
 
 .dashboard-grid {
-  display: grid;url(http://127.0.0.1:5500/media/resume.gif)
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   grid-auto-rows: auto;
