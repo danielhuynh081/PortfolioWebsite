@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Pages */
   const dashboard = document.getElementById("dashboard");
+  const mobileDashboard = document.getElementById("mobiledashboard");
   const resumeScreen = document.getElementById("resumePage");
   const projectScreen = document.getElementById("projectPage");
   const aboutScreen = document.getElementById("aboutPage");
@@ -41,7 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
         flicker.classList.add("hidden");
         flicker.classList.remove("flicker-animation");
         startScreen.classList.add("hidden");
-        dashboard.classList.remove("hidden");
+
+        // Check screen width
+        if (window.innerWidth <= 480) {
+          // Show mobile dashboard
+          mobileDashboard.classList.remove("hidden");
+          dashboard.classList.add("hidden");
+        } else {
+          // Show regular dashboard
+          dashboard.classList.remove("hidden");
+          mobileDashboard.classList.add("hidden");
+        }
       }, 850);
     });
   }
